@@ -48,12 +48,12 @@
 # # print(p1.distance_from_origin())
 # # print(p1)
 
-# l1 = line(1,1,-3)
-# p1 = point(1,2)
+# l1 = line(1,1,5)
+# p1 = point(1,4)
 # print(l1)
 # print(p1)
 # print(l1.point_on_line(p1))
-# print(l1.sortest_distance(p1))
+# print('ghjgjg',l1.sortest_distance(p1))
 
 
 
@@ -163,3 +163,77 @@ the humble msg.'''
 
 
 # <> 👉 --> Static Variables VS Instance variables <--
+'''1️⃣ Instance Variables
+
+Definition:
+Instance variables are variables that belong to an object (instance), of a class.
+
+🔹 Key Points
+
+Defined using self
+
+Each object has its own copy
+
+Changes affect only that object
+
+✅ Example
+class Student:
+    def __init__(self, name, marks):
+        self.name = name      # instance variable
+        self.marks = marks    # instance variable
+
+s1 = Student("Amit", 80)
+s2 = Student("Riya", 90)
+
+s1.marks = 85
+
+print(s1.marks)  # 85
+print(s2.marks)  # 90
+
+
+👉 s1 and s2 have separate values
+
+2️⃣ Static Variables (Class Variables)
+
+Definition:
+Static variables are variables that belong to the class, not to any single object.
+
+🔹 Key Points
+
+Defined inside class but outside methods
+
+Shared by all objects
+
+Only one copy exists
+
+✅ Example
+class Student:
+    school = "ABC School"   # static variable
+
+    def __init__(self, name):
+        self.name = name
+
+s1 = Student("Amit")
+s2 = Student("Riya")
+
+print(s1.school)
+print(s2.school)
+
+
+👉 Both objects share the same school
+
+🔁 Modifying Static Variable
+Student.school = "XYZ School"
+
+print(s1.school)  # XYZ School
+print(s2.school)  # XYZ School
+
+⚠️ Important Difference
+
+If you modify static variable using an object:
+
+s1.school = "New School"
+
+
+➡️ It creates an instance variable, not changes static variable.
+'''
